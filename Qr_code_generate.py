@@ -136,6 +136,7 @@ def generate_link_qr_code(download_link, output_filename="gdrive_qrcode.png"):
 products = [
     {
         "name": "Rapidene 500mg",
+        "category": "PHARMA",
         "price": "Rs. 150",
         "mfd": "2025-07-15",
         "exp": "2027-01-15",
@@ -144,6 +145,7 @@ products = [
     },
     {
         "name": "Bisoprolol 2.5mg",
+        "category": "PHARMA",
         "price": "Rs. 350",
         "mfd": "2025-05-10",
         "exp": "2026-05-10",
@@ -202,7 +204,7 @@ def generate_inventory_json():
                 "wholesalePrice": price_clean * 0.8,
                 "quantity": 1,
                 "lowStockThreshold": 10,
-                "category": "PHARMA",
+                "category": product["category"],
                 "manufactureDate": product["mfd"],
                 "expiryDate": product["exp"],
                 "createdAt": datetime.now().isoformat()
